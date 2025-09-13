@@ -1,0 +1,112 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+
+    <!-- NuGet Metadata -->
+    <PackageId>CsvSmartParser</PackageId>
+    <Version>1.0.0</Version>
+    <Authors>R M Shahidul Islam Shahed</Authors>
+    <Company>Zerobyte</Company>
+    <Description>A robust, easy-to-use CSV parsing library for .NET 8.0 with auto-detection features, template-based parsing, and comprehensive validation.</Description>
+    <PackageTags>csv;parser;data;import;export;template;validation</PackageTags>
+
+
+    <!-- Added Items -->
+    <PackageProjectUrl>https://github.com/shahedbd/CsvSmartParser</PackageProjectUrl>
+    <RepositoryType>git</RepositoryType>
+    <RepositoryUrl>https://github.com/shahedbd/CsvSmartParser</RepositoryUrl>
+    <Copyright>© 2025 R M Shahidul Islam Shahed</Copyright>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+
+    <PackageReleaseNotes>
+      ## Version 1.0.0 - Initial Release
+
+      ### 🎉 Features
+      - **Async/Await Support**: Fully asynchronous APIs using Task-based operations
+      - **Auto-Detection**: Automatically detects file encoding (UTF-8, UTF-16, UTF-32) and delimiters (comma, semicolon, tab, pipe, colon)
+      - **Template-Based Parsing**: Type-safe parsing with customizable validation templates
+      - **Comprehensive Validation**: Built-in validation rules with support for custom validators
+      - **Multiple Input Sources**: Parse from files, strings, or streams
+      - **Large File Support**: Streaming support for processing large CSV files without memory issues
+      - **Error Handling**: Meaningful exceptions with detailed error messages and context
+
+      ### 🔧 Core Components
+      - `CsvParser`: Main parsing class with auto-detection capabilities
+      - `CsvTemplate`: Template-based validation and type mapping
+      - `CsvParsingOptions`: Flexible configuration options
+      - `CsvValidationRule`: Comprehensive validation rule system
+
+      ### 📊 Supported Data Types
+      - String with length validation and pattern matching
+      - Integer and decimal number validation
+      - DateTime parsing with multiple format support
+      - Boolean value parsing
+      - Custom type validation through delegates
+
+      ### 🚀 Performance Features
+      - Memory-efficient streaming for large files
+      - Optimized parsing algorithms
+      - Minimal memory allocation during processing
+      - Support for files of any size
+
+      ### 🛡️ Validation Features
+      - Required field validation
+      - String length constraints (min/max)
+      - Regular expression pattern matching
+      - Custom validation functions
+      - Detailed error messages with row/column context
+
+      ### 📝 API Methods
+      - `ParseFileAsync(string filePath, CsvTemplate? template = null, Encoding? encoding = null)`
+      - `ParseStringAsync(string csvData, CsvTemplate? template = null)`
+      - `ParseStreamAsync(Stream stream, CsvTemplate? template = null, Encoding? encoding = null)`
+
+      ### 🔍 Auto-Detection Capabilities
+      - **Encoding Detection**: UTF-8 (with/without BOM), UTF-16 LE/BE, UTF-32 LE/BE, system default
+      - **Delimiter Detection**: Comma (,), Semicolon (;), Tab (\t), Pipe (|), Colon (:)
+      - **Header Detection**: Automatic detection of header rows
+      - **Quote Handling**: Proper handling of quoted values with embedded delimiters and quotes
+
+      ### 📦 Requirements
+      - .NET 8.0 or later
+      - No external dependencies
+
+      ### 🎯 Use Cases
+      - Data import/export operations
+      - ETL (Extract, Transform, Load) processes
+      - Data validation and cleansing
+      - Report generation from CSV data
+      - Migration scripts and data conversion
+      - Financial and business data processing
+
+      ### 🔧 Configuration Options
+      - Custom delimiters
+      - Header row configuration
+      - Whitespace trimming
+      - Empty line handling
+      - Encoding specification
+      - Validation rule customization
+
+      This initial release provides a solid foundation for CSV parsing in .NET applications with enterprise-grade features and performance.
+    </PackageReleaseNotes>
+    
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="README.md" Pack="true" PackagePath="\" />
+    <None Include="LICENSE" Pack="true" PackagePath="\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="System.Text.Encoding.CodePages" Version="8.0.0" />
+  </ItemGroup>
+
+</Project>
+
+
